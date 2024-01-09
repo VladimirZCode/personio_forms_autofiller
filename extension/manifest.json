@@ -1,0 +1,33 @@
+{
+  "name": "Personio Forms Autofiller",
+  "description": "Fills Personio forms automatically",
+  "homepage_url": "https://github.com/VladimirZCode/personio_forms_autofiller",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "img/icon.png",
+    "32": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "img/icon.png",
+      "32": "img/icon.png",
+      "48": "img/icon.png",
+      "128": "img/icon.png"
+    },
+    "permissions": ["tabs", "activeTab"],
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["./index.bundle.js"],
+      "matches": ["*://sunday.personio.de/*"],
+      "run_at": "document_end"
+    }
+  ]
+}
