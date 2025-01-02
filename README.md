@@ -13,7 +13,7 @@ To install the extension in Chrome:
 - Click on the extension icon in the top right.
 - Check Start and End dates fields. They are Monday and Thursday of the current week. You might change them as you need.
 - Click `Request "Work From Home"` button.
-- The extension will quickly open the Request Absence dialog and automatically fill all the fields and create the Request. Also it will automatically open the Absence calendar page in the new tab so you can check the create request.
+- The extension will quickly open the Request Absence dialog and automatically fill all the fields and create the Request. Also it will automatically open the Absence calendar page in the new tab so you can check the created request.
 
 ## Information for developers
 

@@ -5,20 +5,31 @@
  * @license MIT
  */
 export function addWFHForThisWeek(
+    requestAbsenceButtonClass,
     requestAbsenceButtonAttrName,
     requestAbsenceButtonAttrVal,
     requestHOStartDate,
     requestHOEndDate
 ) {
-    openRequestAbsenceDialog(requestAbsenceButtonAttrName, requestAbsenceButtonAttrVal);
+    openRequestAbsenceDialog(requestAbsenceButtonClass, requestAbsenceButtonAttrName, requestAbsenceButtonAttrVal);
     fillRequestAbsenceDialogForThisWeek(requestHOStartDate, requestHOEndDate);
 }
 
-function openRequestAbsenceDialog(requestAbsenceButtonAttrName, requestAbsenceButtonAttrVal) {
-    const attr = `[${requestAbsenceButtonAttrName}="${requestAbsenceButtonAttrVal}"]`;
-    const absenceButton = document.querySelector(attr);
+function openRequestAbsenceDialog(requestAbsenceButtonClass, requestAbsenceButtonAttrName, requestAbsenceButtonAttrVal) {
+    const buttonClass = `.${requestAbsenceButtonClass}`;
+    const buttons = document.querySelectorAll(buttonClass);
+
+    let absenceButton = Array.from(buttons).find(button => {
+        const nestedDiv = button.querySelector('div');
+        return nestedDiv && nestedDiv.querySelector('span')?.textContent.trim() === "Request Absence";
+    });
+
     if (!absenceButton) {
-        throw new Error(`Incorrect selector for the request absence button: ${attr}`);
+        const attr = `[${requestAbsenceButtonAttrName}="${requestAbsenceButtonAttrVal}"]`;
+        absenceButton = document.querySelector(attr);
+        if (!absenceButton) {
+            throw new Error(`Incorrect selector for the request absence button: ${attr}`);
+        }
     }
     absenceButton.click();
 }

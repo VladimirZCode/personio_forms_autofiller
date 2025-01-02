@@ -9,12 +9,14 @@ import { addWFHForThisWeek } from './module/WorkFromHomeRequest.js';
 chrome.runtime.onMessage.addListener(async (request, sender, response) => {
     if (request.action == "ADD_WFH_FOR_THIS_WEEK") {
         if (
+            request?.requestAbsenceButtonClass &&
             request?.requestAbsenceButtonAttrName &&
             request?.requestAbsenceButtonAttrVal &&
             request?.requestHOStartDate &&
             request?.requestHOEndDate
         ) {
             addWFHForThisWeek(
+                request.requestAbsenceButtonClass,
                 request.requestAbsenceButtonAttrName,
                 request.requestAbsenceButtonAttrVal,
                 request.requestHOStartDate,

@@ -1,22 +1,33 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Personio Forms Autofiller</title>
-    <style>
-      html, body {
-        height: 300px;
-        width: 400px;
-      }
-    </style>
+    <link href="css/popup.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Personio Forms Autofiller</h1>
-    <h2>Request "Work From Home"</h2>
-    <p>Request absence button attribute: <input id="requestAbsenceButtonAttrInput" type="text" name="requestAbsenceButtonAttrInput" value="data-action-name"></p>
-    <p>Request absence button attribute value: <input id="requestAbsenceButtonAttrValInput" type="text" name="requestAbsenceButtonAttrValInput" value="dbv2-my-absences-request"></p>
-    <p>Start Date: <input id="requestHOStartDate" type="text" name="requestHOStartDate" value="01/01/2024"></p>
-    <p>End Date: <input id="requestHOEndDate" type="text" name="requestHOEndDate" value="04/01/2024"></p>
-    <button id='requestWFH'>Request "Work From Home"</button>
-    <script src='popup.bundle.js'></script>
+    <div class="container py-3">
+      <h1>Personio Forms Autofiller</h1>
+      <h2>Request "Work From Home"</h2>
+      <div class="mb-3">
+        <label for="requestAbsenceButtonClassInput" class="form-label">Request absence button class</label>
+        <input id="requestAbsenceButtonClassInput" type="text" class="form-control" name="requestAbsenceButtonClassInput" value="BaseButton-module__cqxEoQOz__v12-2-6">
+      </div>
+      <div class="mb-3">
+        <label for="requestAbsenceButtonAttrInput" class="form-label">Request absence button attribute</label>
+        <input id="requestAbsenceButtonAttrInput" type="text" class="form-control" name="requestAbsenceButtonAttrInput" value="data-action-name">
+      </div>
+      <div class="mb-3">
+        <label for="requestAbsenceButtonAttrValInput" class="form-label">Request absence button attribute value</label>
+        <input id="requestAbsenceButtonAttrValInput" type="text" class="form-control" name="requestAbsenceButtonAttrValInput" value="dbv2-my-absences-request">
+      </div>
+      <p>Start Date: <input id="requestHOStartDate" type="text" name="requestHOStartDate" value="01/01/2024"></p>
+      <p>End Date: <input id="requestHOEndDate" type="text" name="requestHOEndDate" value="04/01/2024"></p>
+      <button id='requestWFH'>Request "Work From Home"</button>
+      <script src='popup.bundle.js'></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </div>
   </body>
 </html>
